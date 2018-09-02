@@ -1,0 +1,4 @@
+services:
+#    wahid_first.example:
+#        class: Wahid\FirstBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

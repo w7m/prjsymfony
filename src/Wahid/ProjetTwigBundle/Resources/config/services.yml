@@ -1,0 +1,4 @@
+services:
+#    wahid_projet_twig.example:
+#        class: Wahid\ProjetTwigBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODOS</title>
+</head>
+<body>
+<h2 style="text-align: center">Liste des notes</h2>
+
+{% for flashMessage in app.session.flashbag.get('notice') %}
+    <ul>
+        <li>
+            {{ flashMessage }}
+        </li>
+    </ul>
+{% endfor %}
+    {% if  app.session.has('notes')  %}
+        <table style="width:40%;border: 1px solid black;">
+            {% for cle,element in app.session.get('notes') %}
+            <tr style="border: 1px solid black;">
+                <th style="border: 1px solid black; text-align: center"> {{ cle }}</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center">{{ element }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+</body>
+</html>

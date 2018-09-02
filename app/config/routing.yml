@@ -1,0 +1,13 @@
+wahid_projet_twig:
+    resource: "@WahidProjetTwigBundle/Resources/config/routing.yml"
+    prefix:   /projettwig
+
+wahid_session:
+    resource: "@WahidSessionBundle/Resources/config/routing.yml"
+    prefix:   /session
+
+wahid_first:
+    resource: "@WahidFirstBundle/Resources/config/routing.yml"
+    prefix:   /firstproject
+
+

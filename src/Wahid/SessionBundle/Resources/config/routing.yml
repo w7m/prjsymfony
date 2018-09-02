@@ -1,0 +1,12 @@
+wahid_session_homepage:
+    path:     /index
+    defaults: { _controller: WahidSessionBundle:ToDo:index }
+wahid_session_addtodo:
+    path:     /add
+    defaults: { _controller: WahidSessionBundle:ToDo:addToDo }
+wahid_session_deletetodo:
+    path:     /delete
+    defaults: { _controller: WahidSessionBundle:ToDo:deleteToDo }
+wahid_session_resettodo:
+    path:     /reset
+    defaults: { _controller: WahidSessionBundle:ToDo:resetToDo }

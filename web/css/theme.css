@@ -1,0 +1,75 @@
+.media .media-avatar {
+
+	border: 1px solid rgba(204, 204, 204, 0.5);
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	height: 100px;
+	width: 100px;
+	margin-right: 20px
+}
+.media .media-avatar img {
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+	height: 90px;
+	width: 90px;
+	margin: 5px
+}
+.media .media-avatar.medium {
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
+	height: 70px;
+	width: 70px
+}
+.media .media-avatar.medium img {
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	height: 60px;
+	width: 60px;
+	margin: 5px
+}
+.media .media-avatar.small {
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	height: 60px;
+	width: 60px
+}
+.media .media-avatar.small img {
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	height: 50px;
+	width: 50px;
+	margin: 5px
+}
+.media .media-title {
+	font-size: 14px;
+	line-height: 16px;
+	margin: 15px 0 0
+}
+.media.user {
+	padding: 15px;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	border:1px solid transparent;
+
+}
+.media.user:hover {
+	background:#E8F6E4;
+	border:1px solid #E8F6E4;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 14px
+}
+.media.user:hover .media-avatar {
+	background: #fff;
+	border-color: #bbb;
+
+}

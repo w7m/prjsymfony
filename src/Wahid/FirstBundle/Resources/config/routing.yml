@@ -1,0 +1,32 @@
+wahid_first_homepage:
+    path:     /index
+    defaults: { _controller: WahidFirstBundle:Default:index }
+wahid_second_homepage:
+    path:     /second
+    defaults: { _controller: WahidFirstBundle:Default:second }
+
+
+#SYMFONY_ROUTE_CHKP2_REQUIREMENTS
+wahid_portfolio_homepage:
+    path:     /portfolio/{_locale}/{nom}/{prenom}/{age}/{section}/{_format}
+    defaults:
+        { _controller: WahidFirstBundle:Default:portfolio,_format : html}
+    requirements:
+        _locale: en|fr
+        age: \d{2}
+        section: PHP|JS
+        _format: html
+
+wahid_imc_homepage:
+    path:     /imc/{weight}/{tallness}
+    defaults: { _controller: WahidFirstBundle:Default:imc }
+#SYMFONY_ROUTE_CHKP1_ROOT_FROMAT
+wahid_check_homepage :
+    path: /article/{year}/{_locale}/{page_name}
+    defaults:
+        { _controller: WahidFirstBundle:Default:check }
+    requirements:
+        _locale: en|fr
+
+
+
