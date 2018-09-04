@@ -15,15 +15,16 @@
 {% block body %}
     <div class="col-lg-12"><small>Bonjour nous sommes le : 31/08/2018</small></div>
     {% set prenomtest = 'wahid' %}
-        {% for personn in personn %}
+    {% for personn in personn %}
 
         <div class="col-lg-4">
             <div class="media user">
                 <a class="media-avatar pull-left" href="#">
                     <img  src="{{ asset(personn.path) }}">
                 </a>
+                <div class="media-body">
                     <h3 class="media-title">
-                        {{ personn.nom|capitalize  }} {{ personn.prenom|capitalize }}
+                        {{ personn.name|capitalize  }} {{ personn.firstname|capitalize }}
                     </h3>
                     <p>
                         <small class="muted">{{ personn.age }}</small></p>
@@ -31,23 +32,16 @@
                         <button class="btn btn-small">
                             <i class="icon-envelope"></i>
                         </button>
-                        {% if personn.prenom is same as (prenomtest) %}
-                        <a href="{{ path('wahid_projet_twig_cv') }}">
-                            <button class="btn btn-small">
-                                <i class="icon-share-alt"></i>
-                            </button>
-                        </a>
-                        {% else %}
-                            <a href="#">
+                            <a href="{{ path('wahid_projet_twig_get_user',{id:personn.id}) }}">
                                 <button class="btn btn-small">
                                     <i class="icon-share-alt"></i>
                                 </button>
                             </a>
-                            {% endif %}
                     </div>
+                </div>
             </div>
         </div>
-        {% endfor %}
+    {% endfor %}
     <br />
 {% endblock %}
 {% block javascripts %}

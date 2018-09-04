@@ -5,17 +5,17 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use AppBundle\Entity\Personne;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction(Request $request)
+
+    public function indexAction($ageMin,$ageMax)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/firstpage.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+
+        $doctrine = $this->getDoctrine();
+        $repository = $doctrine->getRepository('AppBundle:Personne');
+        $personne = $repository->getPersonneByAgeInterval($ageMax,$ageMin);
+        return $this->render('@App/Default/list.html.twig',array('personn'=>$personne));
     }
 }

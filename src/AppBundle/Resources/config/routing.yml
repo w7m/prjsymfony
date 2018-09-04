@@ -1,0 +1,4 @@
+wahid_app_project:
+    path:     /index/{ageMax}/{ageMin}
+    defaults: { _controller: AppBundle:Default:index }
+

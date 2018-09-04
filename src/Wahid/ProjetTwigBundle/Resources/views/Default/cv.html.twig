@@ -15,21 +15,23 @@
         <div class="span6">
             <div class="media user">
                 <a class="media-avatar pull-left" href="#">
-                    <img src="{{ asset('images/user.png') }}">
+                    <img src="{{ asset(personn.path) }}">
                 </a>
                 <div class="media-body">
                     <h3 class="media-title">
-                        Mhamdi Wahid
+                        {{ personn.name|capitalize  }} {{ personn.firstname|capitalize }}
                     </h3>
                     <p>
-                        <small class="muted">29 ans</small></p>
+                        <small class="muted">{{ personn.age }}</small></p>
                     <div class="media-option btn-group shaded-icon">
                         <button class="btn btn-small">
                             <i class="icon-envelope"></i>
                         </button>
-                        <button class="btn btn-small">
-                            <i class="icon-share-alt"></i>
-                        </button>
+                        <a href="{{ path('wahid_projet_twig_get_user',{id:personn.id}) }}">
+                            <button class="btn btn-small">
+                                <i class="icon-share-alt"></i>
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

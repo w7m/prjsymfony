@@ -1,0 +1,4 @@
+services:
+#    wahid_handling_user.example:
+#        class: Wahid\HandlingUserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

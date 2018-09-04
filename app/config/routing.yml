@@ -1,3 +1,7 @@
+wahid_handling_user:
+    resource: "@WahidHandlingUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
 wahid_projet_twig:
     resource: "@WahidProjetTwigBundle/Resources/config/routing.yml"
     prefix:   /projettwig
@@ -10,4 +14,7 @@ wahid_first:
     resource: "@WahidFirstBundle/Resources/config/routing.yml"
     prefix:   /firstproject
 
+app_bundle:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /personne
 

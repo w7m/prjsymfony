@@ -9,7 +9,7 @@
 namespace Wahid\ProjetTwigBundle\Entity;
 
 
-class Personne
+class PersonneTwig
 {
     private $nom;
     private $prenom;

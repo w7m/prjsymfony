@@ -1,0 +1,35 @@
+{% extends '@App/layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link type="text/css" href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('images/icons/css/font-awesome.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}" rel='stylesheet'>
+{% endblock %}
+{% block titlebody %}
+    <h1>MON CV</h1>
+{% endblock %}
+{% block soustitlebody %}
+    <li class="active"><i class="icon-file-alt"></i>Mon CV</li>
+{% endblock %}
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Age</th>
+            <th scope="col">Path</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for personn in personn %}
+        <tr>
+            <th scope="row">{{ personn.nom }}</th>
+            <td>{{ personn.prenom }}</td>
+            <td>{{ personn.age }}</td>
+            <td>{{ personn.path }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

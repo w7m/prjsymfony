@@ -9,3 +9,39 @@ wahid_projet_twig_cv:
 wahid_projet_twig_cvs:
     path:     /cvs
     defaults: { _controller: WahidProjetTwigBundle:Default:cvs }
+
+
+wahid_projet_twig_add_user:
+    path:     /add/{name}/{first_name}/{age}/{path}
+    defaults: { _controller: WahidProjetTwigBundle:Users:add,path : images/user1.png }
+    requirements:
+        age: ^[1-9][0-9]$
+        path: ^.+(.jpeg|.jpg|.png)$
+
+wahid_projet_twig_list_user:
+    path:     /list
+    defaults: { _controller: WahidProjetTwigBundle:Users:list }
+
+wahid_projet_twig_update_user:
+    path:     /update/{id}
+    defaults: { _controller: WahidProjetTwigBundle:Users:update }
+
+wahid_projet_twig_get_user:
+    path:     /getuser/{id}
+    defaults: { _controller: WahidProjetTwigBundle:Users:getuser }
+wahid_projet_twig_delete_user:
+    path:     /delete/{id}
+    defaults: { _controller: WahidProjetTwigBundle:Users:delete }
+
+
+wahid_projet_twig_seletcbyage_user:
+    path:     /getuserbyage/{ageMin}/{ageMax}
+    defaults: { _controller: WahidProjetTwigBundle:Users:seletcuserbyage }
+wahid_projet_twig_seletcbyname_user:
+    path:     /namebylike/{word}
+    defaults: { _controller: WahidProjetTwigBundle:Users:seletcuserbyname }
+
+
+
+
+
