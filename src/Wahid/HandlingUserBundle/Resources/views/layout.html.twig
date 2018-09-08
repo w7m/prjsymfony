@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block menu %}
-    <li><a href="{{ path('wahid_projet_twig_homepage') }}"><i class="fa fa-dashboard"></i> Ajouter un étudiant</a></li>
-    <li><a href="{{ path('wahid_projet_twig_homepage') }}"><i class="fa fa-dashboard"></i> List des étudiants</a></li>
-    <li><a href="#"><i class="fa fa-bar-chart-o"></i> Ajouter un cour</a></li>
-    <li><a href="#"><i class="fa fa-bar-chart-o"></i> Liste des cours</a></li>
-    <li><a href="#"><i class="fa fa-table"></i> Ajouter une section</a></li>
-    <li><a href="#"><i class="fa fa-table"></i> Liste des sections</a></li>
-
+    <li><a href="{{ path('wahid_projet_crud_etudiant_show_form_user') }}"><i class="fa fa-dashboard"></i> Ajouter un étudiant</a></li>
+    <li><a href="{{ path('wahid_projet_crud_list_etudiant_user') }}"><i class="fa fa-dashboard"></i> List des étudiants</a></li>
+    <li><a href="{{ path('wahid_projet_crud_cours_show_formuser') }}"><i class="fa fa-bar-chart-o"></i> Ajouter un cour</a></li>
+    <li><a href="{{ path('wahid_projet_crud_list_cours_user') }}"><i class="fa fa-bar-chart-o"></i> Liste des cours</a></li>
+    <li><a href="{{ path('wahid_projet_crud_section_show_formuser') }}"><i class="fa fa-table"></i> Ajouter une section</a></li>
+    <li><a href="{{ path('wahid_projet_crud_list_section_user') }}"><i class="fa fa-table"></i> Liste des sections</a></li>
 {% endblock %}

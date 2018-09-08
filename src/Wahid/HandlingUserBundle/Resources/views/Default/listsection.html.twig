@@ -1,4 +1,4 @@
-{% extends '@WahidProjetTwig/layout.html.twig' %}
+{% extends '@WahidHandlingUser/layout.html.twig' %}
 {% block stylesheets %}
     {{ parent() }}
     <link type="text/css" href="{{ asset('bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
@@ -10,11 +10,16 @@
         <thead>
             <tr>
                 <th>Nom</th>
+                <th>Modifier</th>
+                <th>Supprimer </th>
+            </tr>
         </thead>
         <tbody>
         {% for section in section %}
             <tr>
                 <td>{{ section.name }}</td>
+                <td><a href="{{ path('wahid_projet_crud_update_section_user',{ id:section.id}) }}"><span class='glyphicon glyphicon-cog'></span> </a></td>
+                <td><a href="{{ path('wahid_projet_crud_delete_section_user',{ id:section.id}) }}"><span class='glyphicon glyphicon-trash'></span></a></td>
             </tr>
         {% endfor %}
         </tbody>

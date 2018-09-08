@@ -25,7 +25,16 @@ wahid_projet_crud_add_section_user:
 wahid_projet_crud_list_section_user:
     path:     /section/list
     defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:listSection }
-
+wahid_projet_crud_delete_section_user:
+    path:     /section/delete/{id}
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:deleteSection }
+    requirements:
+        id: \d+
+wahid_projet_crud_update_section_user:
+    path:     /section/update/{id}
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:updateSection }
+    requirements:
+        id: \d+
 
 
 wahid_projet_crud_cours_show_formuser:
@@ -39,3 +48,14 @@ wahid_projet_crud_add_cours_user:
 wahid_projet_crud_list_cours_user:
     path:     /cour/list
     defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:listCous }
+
+wahid_projet_crud_delete_cours_user:
+    path:     /cour/delete/{id}
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:deleteCour }
+    requirements:
+        id: \d+
+wahid_projet_crud_update_cours_user:
+    path:     /cour/update/{id}
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:updateCous }
+    requirements:
+        id: \d+

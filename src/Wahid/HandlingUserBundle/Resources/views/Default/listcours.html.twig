@@ -1,4 +1,4 @@
-{% extends '@WahidProjetTwig/layout.html.twig' %}
+{% extends '@WahidHandlingUser/layout.html.twig' %}
 {% block stylesheets %}
     {{ parent() }}
     <link type="text/css" href="{{ asset('bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
@@ -11,7 +11,10 @@
             <tr>
                 <th>Nom</th>
                 <th>Nombre de modules</th>
-                <th>Nom de l'enseignant</th> </tr>
+                <th>Nom de l'enseignant</th>
+                <th>Modifer </th>
+                <th>Supprimer</th>
+            </tr>
         </thead>
         <tbody>
         {% for cours in cours %}
@@ -19,6 +22,8 @@
                 <td>{{ cours.name }}</td>
                 <td>{{ cours.numberModule }}</td>
                 <td>{{ cours.teacherName }}</td>
+                <td><a href="{{ path('wahid_projet_crud_delete_cours_user',{id:cours.id}) }}"><span class='glyphicon glyphicon-cog'></span> </a></td>
+                <td><a href="{{ path('wahid_projet_crud_delete_cours_user',{ id:cours.id}) }}"><span class='glyphicon glyphicon-trash'></span></a></td>
             </tr>
         {% endfor %}
         </tbody>

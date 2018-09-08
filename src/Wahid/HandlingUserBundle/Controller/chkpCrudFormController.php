@@ -30,7 +30,7 @@ class chkpCrudFormController extends Controller
             $compteSocial = $etudiant->getCompteSocials();
             foreach ($compteSocial as $compteSocialuni){
                 $compteSocialuni->setEtudiant($etudiant);
-                $em->persist($compteSocial);
+                $em->persist($compteSocialuni);
             }
             $cours = $etudiant->getCours();
             foreach ($cours as $cour){
@@ -42,9 +42,6 @@ class chkpCrudFormController extends Controller
         }
         return $this->redirectToRoute('wahid_projet_crud_etudiant_show_form_user');
     }
-
-
-
     public function listEtudiantAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -85,6 +82,27 @@ class chkpCrudFormController extends Controller
         $cours = $em->getRepository('WahidHandlingUserBundle:Cours')->findAll();
         return $this->render('@WahidHandlingUser/Default/listcours.html.twig',array('cours'=>$cours));
     }
+    public function deleteCourAction(Request $request,$id)
+    {
+        $session = $request->getSession();
+        $em = $this->getDoctrine()->getManager();
+        $cour = $em->getRepository('WahidHandlingUserBundle:Cours')->find($id);
+        if ($cour)
+        {
+            $em->remove($cour);
+            $em->flush();
+            $session->getFlashBag()->add('notice', 'Cour supprimé avec succès');
+            return $this->redirectToRoute('wahid_projet_crud_list_cours_user');
+        }
+        $session->getFlashBag()->add('notice', 'Vérifier votre coordonnées');
+        return $this->redirectToRoute('wahid_projet_crud_list_cours_user');
+
+
+    }
+    public function updateCousAction($id)
+    {
+
+    }
 
 
 
@@ -119,8 +137,41 @@ class chkpCrudFormController extends Controller
         $section = $em->getRepository('WahidHandlingUserBundle:Section')->findAll();
         return $this->render('@WahidHandlingUser/Default/listsection.html.twig',array('section'=>$section));
     }
+    public function deleteSectionAction(Request $request,$id)
+    {
+        $session = $request->getSession();
+        $em = $this->getDoctrine()->getManager();
+        $section = $em->getRepository('WahidHandlingUserBundle:Section')->find($id);
+        if ($section)
+        {
+            $em->remove($section);
+            $em->flush();
+            $session->getFlashBag()->add('notice', 'Section supprimé avec succès');
+            return $this->redirectToRoute('wahid_projet_crud_list_section_user');
+        }
+        $session->getFlashBag()->add('notice', 'Vérifier votre coordonnées');
+        return $this->redirectToRoute('wahid_projet_crud_list_section_user');
+    }
+    public function updateSectionAction(Request $request,Section $section)
+    {
+        $session = $request->getSession();
+        if ($section){
+            $form = $this->createForm(SectionType::class,$section
+            );
+
+            if ($request->isMethod('POST') && $form->isValid()){
+
+                $em = $this->getDoctrine()->getManager();
+                die("fzzzzzzzzzz");
+                $em->flush();
+                $session->getFlashBag()->add('notice', 'Section modifié avec succès');
+                return $this->redirectToRoute('wahid_projet_crud_list_section_user');
+            }
+            return $this->render('@WahidHandlingUser/Default/addsection.html.twig',
+                array('form'=>$form->createView()));
+        }
 
 
 
-
+    }
 }
