@@ -1,3 +1,41 @@
 wahid_handling_user_homepage:
     path:     /
     defaults: { _controller: WahidHandlingUserBundle:Default:index }
+
+wahid_projet_crud_etudiant_show_form_user:
+    path:     /etudiant/add
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:showFormEtudiant}
+
+wahid_projet_crud_add_etudiant_user:
+    path:     /addetudiant
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:addEtudiant }
+wahid_projet_crud_list_etudiant_user:
+    path:     /etudiant/list
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:listEtudiant }
+
+
+wahid_projet_crud_section_show_formuser:
+    path:     /section/add
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:showFormsection }
+
+wahid_projet_crud_add_section_user:
+    path:     /addsection
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:addSection }
+
+wahid_projet_crud_list_section_user:
+    path:     /section/list
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:listSection }
+
+
+
+wahid_projet_crud_cours_show_formuser:
+    path:     /cour/add
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:showFormCours }
+
+wahid_projet_crud_add_cours_user:
+    path:     /addcour
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:addCours }
+
+wahid_projet_crud_list_cours_user:
+    path:     /cour/list
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:listCous }

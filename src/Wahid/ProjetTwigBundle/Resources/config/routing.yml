@@ -1,6 +1,6 @@
 wahid_projet_twig_homepage:
     path:     /index
-    defaults: { _controller: WahidProjetTwigBundle:Default:index }
+    defaults: { _controller: WahidProjetTwigBundle:Users:index }
 
 wahid_projet_twig_cv:
     path:     /cv
@@ -37,9 +37,13 @@ wahid_projet_twig_delete_user:
 wahid_projet_twig_seletcbyage_user:
     path:     /getuserbyage/{ageMin}/{ageMax}
     defaults: { _controller: WahidProjetTwigBundle:Users:seletcuserbyage }
+
 wahid_projet_twig_seletcbyname_user:
     path:     /namebylike/{word}
     defaults: { _controller: WahidProjetTwigBundle:Users:seletcuserbyname }
+
+
+
 
 
 

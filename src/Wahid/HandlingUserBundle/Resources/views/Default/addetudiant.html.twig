@@ -1,0 +1,27 @@
+{% extends '@WahidHandlingUser/layout.html.twig' %}
+
+{% block titlebody %}
+    <h1>Ajouter un etudiant</h1>
+{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form.studentCardNumbers) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.firstName) }}
+    {{ form_row(form.datebirth) }}
+    {{ form_row(form.media) }}
+    {{ form_row(form.section) }}
+    {{ form_row(form.cours) }}
+    {{ form_row(form.comptesocials) }}
+    <button id="add-social-account">Ajouter un autre compte</button>
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/addcomptesocial.js') }}"></script>
+{% endblock %}

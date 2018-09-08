@@ -1,15 +1,19 @@
 <?php
 
 namespace Wahid\ProjetTwigBundle\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Wahid\ProjetTwigBundle\Entity\Users;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class UsersController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        return $this->render('@WahidProjetTwig/Default/index.html.twig');
+        $response = new Response("<h1>fzzzzzzzzzzzz</h1>");
+
+        return $this->render('@WahidProjetTwig/Default/index.html.twig',array('request'=>$request,'response'=>$response));
     }
 
 

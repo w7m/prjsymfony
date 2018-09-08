@@ -1,2 +1,6 @@
 {% extends '@WahidProjetTwig/layout.html.twig' %}
-{% block body %}{% endblock %}
+{% block body %}
+    {{ dump(request) }}
+    <br>
+    {{ dump(response) }}
+{% endblock %}
