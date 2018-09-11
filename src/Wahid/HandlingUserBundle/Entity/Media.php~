@@ -41,6 +41,7 @@ class Media
      *
      * @return int
      */
+    private $file;
     public function getId()
     {
         return $this->id;

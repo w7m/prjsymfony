@@ -1,0 +1,97 @@
+{% extends '@WahidHandlingUser/layout.html.twig' %}
+{% block titlebody %}
+    <h1>Information sur l'etudiant</h1>
+{% endblock %}
+{% block body %}
+        <div class="col-lg-4">
+            <div class="media user">
+                <a class="media-avatar pull-left" href="#">
+                    <img  src="{{ asset(etudiant.media.path) }}" alt="{{ etudiant.media.alt }}">
+                </a>
+                <div class="media-body">
+                    <h3 class="media-title">
+
+                        Nméros Card Etudiant : {{ etudiant.studentCardNumbers }}
+                    </h3>
+                    <h3 class="media-title">
+                        {{ etudiant.name|capitalize }} {{ etudiant.firstname|capitalize }}
+                    </h3>
+                    <div class="media-option btn-group shaded-icon">
+                        <a href="#">
+                            <button class="btn btn-small">
+                                <i class="icon-envelope"></i>
+                            </button>
+                        </a>
+                        <a href="{{ path('wahid_projet_crud_detail_etudiant_user',{ id:etudiant.id}) }}">
+                            <button class="btn btn-small">
+                                <i class="icon-share-alt"></i>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="media-option btn-group shaded-icon">
+                        <a href="{{ path('wahid_projet_crud_delete_etudiant_user',{id:etudiant.id}) }}">
+                            <button class="btn btn-small">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </a>
+                        <a href="{{ path('wahid_projet_crud_update_etudiant_user',{id:etudiant.id}) }}">
+                            <button class="btn btn-small">
+                                <i class="fas fa-wrench"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <table class="table table-bordered table-striped table-condensed">
+        <caption> <h2>Liste des cours </h2> </caption>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Nombre de modules</th>
+            <th>Nom de l'enseignant</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cours in etudiant.cours %}
+            <tr>
+                <td>{{ cours.name }}</td>
+                <td>{{ cours.numberModule }}</td>
+                <td>{{ cours.teacherName }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br />
+    <table class="table table-bordered table-striped table-condensed">
+        <caption> <h2>Section </h2> </caption>
+        <thead>
+        <tr>
+            <th>Nom</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ etudiant.section.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="table table-bordered table-striped table-condensed">
+        <caption> <h2>Liste des réseaux sociaux</h2> </caption>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Lien</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for compteSocial in etudiant.compteSocials %}
+            <tr>
+                <td>{{ compteSocial.name }}</td>
+                <td>{{ compteSocial.path }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

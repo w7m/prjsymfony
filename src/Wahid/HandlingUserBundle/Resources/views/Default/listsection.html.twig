@@ -1,9 +1,4 @@
 {% extends '@WahidHandlingUser/layout.html.twig' %}
-{% block stylesheets %}
-    {{ parent() }}
-    <link type="text/css" href="{{ asset('bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
-    <link type="text/css" href="{{ asset('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}" rel='stylesheet'>
-{% endblock %}
 {% block body %}
     <table class="table table-bordered table-striped table-condensed">
         <caption> <h2>Liste des sections :</h2> </caption>
@@ -18,8 +13,18 @@
         {% for section in section %}
             <tr>
                 <td>{{ section.name }}</td>
-                <td><a href="{{ path('wahid_projet_crud_update_section_user',{ id:section.id}) }}"><span class='glyphicon glyphicon-cog'></span> </a></td>
-                <td><a href="{{ path('wahid_projet_crud_delete_section_user',{ id:section.id}) }}"><span class='glyphicon glyphicon-trash'></span></a></td>
+                <td><a href="{{ path('wahid_projet_crud_update_section_user',{ id:section.id}) }}">
+                        <button class="btn btn-small">
+                            <i class="fas fa-wrench"></i>
+                        </button>
+                    </a>
+                </td>
+                <td><a href="{{ path('wahid_projet_crud_delete_section_user',{ id:section.id}) }}">
+                        <button class="btn btn-small">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>

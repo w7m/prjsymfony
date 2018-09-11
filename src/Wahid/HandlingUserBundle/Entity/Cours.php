@@ -3,6 +3,7 @@
 namespace Wahid\HandlingUserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Cours
@@ -23,21 +24,21 @@ class Cours
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Veuillez remplir ce champs")
      * @ORM\Column(name="name", type="string", length=100)
      */
     private $name;
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank(message="Veuillez remplir ce champs")
      * @ORM\Column(name="numberModule", type="integer")
      */
     private $numberModule;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Veuillez remplir ce champs")
      * @ORM\Column(name="teacherName", type="string", length=100)
      */
     private $teacherName;

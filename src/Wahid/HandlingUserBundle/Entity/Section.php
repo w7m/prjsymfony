@@ -3,12 +3,16 @@
 namespace Wahid\HandlingUserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Section
  *
  * @ORM\Table(name="section")
  * @ORM\Entity(repositoryClass="Wahid\HandlingUserBundle\Repository\SectionRepository")
+ * @ORM\Entity
+ * @UniqueEntity("name")
  */
 class Section
 {
@@ -23,8 +27,14 @@ class Section
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Veuillez remplir ce champs")
      * @ORM\Column(name="name", type="string", length=100)
+     * @Assert\Length(
+     *      min =4 ,
+     *      max = 50,
+     *      minMessage = "Le nom du section  doit contenir au minimum {{ limit }} caractères !",
+     *      maxMessage = "Le nom du section  doit contenir au maximum {{ limit }} caractères !"
+     * )
      */
     private $name;
 

@@ -3,7 +3,7 @@
 namespace Wahid\HandlingUserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * CompteSocial
  *
@@ -30,15 +30,23 @@ class CompteSocial
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Veuillez remplir ce champs")
      * @ORM\Column(name="name", type="string", length=100)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "Le nom doit contenir au minimum {{ limit }} caractères !",
+     *      maxMessage = "Le nom doit contenir au maximum {{ limit }} caractères !"
+     * )
      */
     private $name;
 
     /**
-     * @var string
-     *
+     * @Assert\NotBlank(message="Veuillez remplir ce champs")
      * @ORM\Column(name="path", type="string", length=200)
+     * @Assert\Url(
+     *    message = "The url '{{ value }}' is not a valid url",
+     * )
      */
     private $path;
 

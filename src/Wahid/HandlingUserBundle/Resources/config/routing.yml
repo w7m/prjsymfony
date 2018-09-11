@@ -12,6 +12,21 @@ wahid_projet_crud_add_etudiant_user:
 wahid_projet_crud_list_etudiant_user:
     path:     /etudiant/list
     defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:listEtudiant }
+wahid_projet_crud_detail_etudiant_user:
+    path:     /etudiant/info/{id}
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:detailStudent }
+    requirements:
+        id: \d+
+wahid_projet_crud_delete_etudiant_user:
+    path:     /etudiant/delete/{id}
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:deleteEtudiant }
+wahid_projet_crud_update_etudiant_user:
+    path:     /etudiant/update/{id}
+    defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:updateEtudiant }
+    requirements:
+        id: \d+
+
+
 
 
 wahid_projet_crud_section_show_formuser:
@@ -35,6 +50,7 @@ wahid_projet_crud_update_section_user:
     defaults: { _controller: WahidHandlingUserBundle:chkpCrudForm:updateSection }
     requirements:
         id: \d+
+
 
 
 wahid_projet_crud_cours_show_formuser:

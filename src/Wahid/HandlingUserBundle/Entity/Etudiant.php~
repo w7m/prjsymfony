@@ -3,6 +3,7 @@
 namespace Wahid\HandlingUserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Etudiant
@@ -49,40 +50,23 @@ class Etudiant
      * @ORM\Column(name="datebirth", type="datetime")
      */
     private $datebirth;
-
-
     /**
-     * Get id
-     *
-     * @return int
-     */
-
-    /**
-     * @var
-     * @ORM\OneToOne(targetEntity="Wahid\HandlingUserBundle\Entity\Media",cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Wahid\HandlingUserBundle\Entity\Media",cascade={"persist","remove"})
      */
     private $media;
-
     /**
      * @ORM\ManyToOne(targetEntity="Wahid\HandlingUserBundle\Entity\Section")
-     * @ORM\JoinColumn(nullable=false)
      */
-
     private $section;
-
     /**
      * @ORM\ManyToMany(targetEntity="Wahid\HandlingUserBundle\Entity\Cours")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $cours;
-
     /**
-     * @ORM\OneToMany(targetEntity="Wahid\HandlingUserBundle\Entity\CompteSocial",mappedBy="etudiant")
+     * @ORM\OneToMany(targetEntity="Wahid\HandlingUserBundle\Entity\CompteSocial",mappedBy="etudiant",cascade={"persist", "remove"})
      */
 
-
     private $compteSocials;
-
 
     public function getId()
     {

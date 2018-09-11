@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_start(form) }}
     {{ form_row(form.studentCardNumbers) }}
     {{ form_row(form.name) }}
     {{ form_row(form.firstName) }}
@@ -26,5 +26,5 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/addcomptesocial.js') }}"></script>
+    <script src="{{ asset('js/addcomptesocialforupdateuser.js') }}"></script>
 {% endblock %}

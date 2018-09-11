@@ -5,6 +5,8 @@ namespace Wahid\HandlingUserBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 
 class MediaType extends AbstractType
 {
@@ -13,7 +15,7 @@ class MediaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('path')->add('alt');
+        $builder->add('file',FileType::class,array('label'=>"Ajoutez votre image"));
     }/**
      * {@inheritdoc}
      */

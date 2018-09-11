@@ -1,4 +1,12 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link type="text/css" href="{{ asset('bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('images/icons/css/font-awesome.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}" rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+{% endblock %}
 {% block menu %}
     <li><a href="{{ path('wahid_projet_crud_etudiant_show_form_user') }}"><i class="fa fa-dashboard"></i> Ajouter un étudiant</a></li>
     <li><a href="{{ path('wahid_projet_crud_list_etudiant_user') }}"><i class="fa fa-dashboard"></i> List des étudiants</a></li>
