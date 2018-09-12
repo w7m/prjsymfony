@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Wahid\SessionBundle\WahidSessionBundle(),
             new Wahid\ProjetTwigBundle\WahidProjetTwigBundle(),
             new Wahid\HandlingUserBundle\WahidHandlingUserBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
